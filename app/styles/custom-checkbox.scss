@@ -1,0 +1,60 @@
+$black-color: black;
+$white-color: white;
+$disable-color: #8d8d8d;
+$hover-color: #3a56c2;
+
+@mixin user-select-none {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+
+input[type="checkbox"][custom-checkbox] {
+  display: none;
+
+  + label {
+    box-sizing: border-box;
+    background-color: $white-color;
+    cursor: pointer;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    border: 1px solid $black-color;
+    transition: border 0.5s ease-out;
+
+    &:hover {
+      border: 1px solid $hover-color;
+    }
+  }
+
+  +label.checkbox-with-label {
+    position: relative;
+    top: 2px;
+  }
+
+  &:checked + label::before {
+    content: "\f00c";
+    display: inline-block;
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+  }
+
+  &[disabled] + label {
+    background-color: white;
+    cursor: auto;
+    border: 1px solid $disable-color;
+    color: $disable-color;
+  }
+
+  + label + .custom-checkbox-label {
+    cursor: pointer;
+    @include user-select-none;
+    font-family: sans-serif;
+    font-size: 13px;
+    margin-left: 8px;
+  }
+}
+

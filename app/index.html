@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="custom-checkbox">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/custom-checkbox.css"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div>
+    <input type="checkbox" id="cb_1" custom-checkbox data-label="Click" checked/>
+</div>
+
+<div>
+    <input type="checkbox" id="cb_2" custom-checkbox/>
+</div>
+
+<div>
+    <input type="checkbox" id="cb_3" custom-checkbox disabled checked/>
+</div>
+
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="directive/customCheckbox.js"></script>
+
+</body>
+</html>
