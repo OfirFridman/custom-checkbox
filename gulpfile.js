@@ -10,7 +10,7 @@ var paths = {
 
 
 gulp.task('sass', function () {
-    gulp.src('app/styles/custom-checkbox.scss')
+    gulp.src(paths.sass)
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./app/css'))
         .pipe(livereload());
