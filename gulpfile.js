@@ -22,6 +22,7 @@ var gulp = require('gulp'),
 gulp.task('styles', function() {
     return sass('app/styles/custom-checkbox.scss', { style: 'expanded' })
         .pipe(autoprefixer('last 2 version'))
+        .pipe(gulp.dest('app/css'))
         .pipe(gulp.dest('dist/styles'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
