@@ -6,6 +6,7 @@
   "authors": [
     "ofir fridman"
   ],
+  "keywords": [ "custom checkbox", "checkbox", "angularjs" ],
   "license": "MIT",
   "moduleType": [],
   "homepage": "",
