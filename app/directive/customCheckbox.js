@@ -1,5 +1,6 @@
-(function () {
+(function (angular) {
     'use strict';
+
     angular.
         module('custom-checkbox')
         .directive('customCheckbox', customCheckbox);
@@ -26,4 +27,4 @@
 
         }
     }
-})();
+})(angular);
