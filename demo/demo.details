@@ -1,5 +1,4 @@
-Everything before the line containing only '---' will not be parsed
-
+/*
 ---
  name: Angularjs Custom Checkbox
  description: Angularjs Custom Checkbox
@@ -10,5 +9,4 @@ Everything before the line containing only '---' will not be parsed
      - /css/normalize.css
  normalize_css: yes
  ...
-
-Everything after the line containing only '...' will not be parsed
+*/
