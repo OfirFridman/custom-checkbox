@@ -11,15 +11,7 @@ Angularjs custom checkbox directive
 
 - AngularJS
 
-##Example
-
-```html
-
-<input type="checkbox" id="cb_1" custom-checkbox data-label="Click" checked/>
-
-```
-
-## installation
+## Installation
 ----
 
 ### bower
@@ -37,3 +29,13 @@ bower install angular-custom-checkbox --save
  ```
   <script src="../bower_components/custom-checkbox/dist/scripts/main.js"></script>
   @import "../../bower_components/custom-checkbox/dist/styles/custom-checkbox.min.css";
+
+
+##Example
+----
+
+```html
+
+<input type="checkbox" id="cb_1" custom-checkbox data-label="Click" checked/>
+
+```
