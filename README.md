@@ -16,18 +16,22 @@ Angularjs custom checkbox directive
 
 ### bower
 
-1. execute this command to install the custom-checkbox as bower package
+- execute the below command to install the custom-checkbox as bower package
 
 ```
 bower install angular-custom-checkbox --save
 ```
 
-2. Add the custom-checkbox module as a dependency to your application module:
+- Add the custom-checkbox module as a dependency to your application module
 
 ```js
  angular.module('your-app', ['custom-checkbox']);
  ```
-  <script src="../bower_components/custom-checkbox/dist/scripts/main.js"></script>
+
+
+```js
+<script src="../bower_components/custom-checkbox/dist/scripts/main.js"></script>
+```
   @import "../../bower_components/custom-checkbox/dist/styles/custom-checkbox.min.css";
 
 
