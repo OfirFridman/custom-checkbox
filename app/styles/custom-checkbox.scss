@@ -13,7 +13,8 @@ $hover-color: #3a56c2;
 }
 
 input[type="checkbox"][custom-checkbox] {
-  display: none;
+  position: absolute;
+  opacity: 0;
 
   + label {
     box-sizing: border-box;
@@ -34,6 +35,10 @@ input[type="checkbox"][custom-checkbox] {
   +label.checkbox-with-label {
     position: relative;
     top: 2px;
+  }
+
+  &:focus + label{
+    border: 1px solid $hover-color;
   }
 
   &:checked + label::before {

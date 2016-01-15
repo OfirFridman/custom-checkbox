@@ -1,8 +1,16 @@
-angular.module('custom-checkbox', []);
-
-
-(function () {
+(function (angular) {
     'use strict';
+
+    angular.
+        module('custom-checkbox', []);
+})(angular);
+
+
+
+
+(function (angular) {
+    'use strict';
+
     angular.
         module('custom-checkbox')
         .directive('customCheckbox', customCheckbox);
@@ -27,6 +35,7 @@ angular.module('custom-checkbox', []);
                 '<label class="custom-checkbox-label" for="' + checkBoxId + '">' + checkBoxLabel + '</label>');
             }
 
+
         }
     }
-})();
+})(angular);

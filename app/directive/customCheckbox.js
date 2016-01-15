@@ -24,6 +24,8 @@
                 element.after('<label for="' + checkBoxId + '" class="fa checkbox-with-label"></label>' +
                 '<label class="custom-checkbox-label" for="' + checkBoxId + '">' + checkBoxLabel + '</label>');
             }
+
+
         }
     }
 })(angular);
