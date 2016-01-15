@@ -3,7 +3,12 @@
 $black-color: black;
 $white-color: white;
 $disable-color: #8d8d8d;
-$hover-color: #3a56c2;
+$hover-color: #357ec2;
+$selected-color: #2ac225;
+
+
+$checkbox-dim: 16px;
+$checkbox-border: 2px;
 
 @mixin user-select-none {
   -webkit-user-select: none; /* Chrome all / Safari all */
@@ -12,55 +17,74 @@ $hover-color: #3a56c2;
   user-select: none; /* Likely future */
 }
 
-input[type="checkbox"][custom-checkbox] {
-  position: absolute;
-  opacity: 0;
+.check-box-wrapper {
+  display: inline-block;
 
-  + label {
-    box-sizing: border-box;
-    background-color: $white-color;
-    cursor: pointer;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    font-size: 14px;
-    border: 1px solid $black-color;
-    transition: border 0.5s ease-out;
-
-    &:hover {
-      border: 1px solid $hover-color;
+  &:hover {
+    input[type="checkbox"][custom-checkbox] + label {
+      border: $checkbox-border solid $hover-color;
     }
   }
 
-  +label.checkbox-with-label {
-    position: relative;
-    top: 2px;
-  }
-
-  &:focus + label{
-    border: 1px solid $hover-color;
-  }
-
-  &:checked + label::before {
-    content: "\f00c";
-    display: inline-block;
+  input[type="checkbox"][custom-checkbox] {
     position: absolute;
-    right: -1px;
-    bottom: -1px;
-  }
+    opacity: 0;
 
-  &[disabled] + label {
-    background-color: white;
-    cursor: auto;
-    border: 1px solid $disable-color;
-    color: $disable-color;
-  }
+    + label {
+      box-sizing: border-box;
+      background-color: $white-color;
+      cursor: pointer;
+      display: inline-block;
+      width: $checkbox-dim;
+      height: $checkbox-dim;
+      font-size: 14px;
+      border: $checkbox-border solid $selected-color;
+      transition: border 0.5s ease-out;
 
-  + label + .custom-checkbox-label {
-    cursor: pointer;
-    @include user-select-none;
-    font-family: sans-serif;
-    font-size: 13px;
-    margin-left: 8px;
+      &:hover {
+        border: $checkbox-border solid $hover-color;
+      }
+    }
+
+    + label.checkbox-with-label {
+      position: relative;
+      top: $checkbox-border;
+    }
+
+    &:focus + label {
+      border: $checkbox-border solid $hover-color;
+    }
+
+    &:checked + label::before {
+      content: "\f00c";
+      display: inline-block;
+      position: absolute;
+      right: -1px;
+      bottom: -1px;
+      color: $white-color;
+      background-color: $selected-color;
+    }
+
+    &[disabled] + label {
+      cursor: auto;
+      border: $checkbox-border solid $disable-color;
+      &::before{
+        background-color: $disable-color;
+      }
+    }
+
+    + label + .custom-checkbox-label {
+      cursor: pointer;
+      @include user-select-none;
+      font-family: sans-serif;
+      font-size: 13px;
+      margin-left: 8px;
+    }
+
+    &[disabled] + label + .custom-checkbox-label {
+      cursor: default;
+      color: $disable-color;
+    }
   }
 }
+
