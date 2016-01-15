@@ -1,39 +1,52 @@
 @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
-input[type="checkbox"][custom-checkbox] {
-  display: none;
+.check-box-wrapper {
+  display: inline-block;
 }
-input[type="checkbox"][custom-checkbox] + label {
+.check-box-wrapper:hover input[type="checkbox"][custom-checkbox] + label {
+  border: 2px solid #357ec2;
+}
+.check-box-wrapper input[type="checkbox"][custom-checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.check-box-wrapper input[type="checkbox"][custom-checkbox] + label {
   box-sizing: border-box;
   background-color: white;
   cursor: pointer;
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   font-size: 14px;
-  border: 1px solid black;
+  border: 2px solid #2ac225;
   transition: border 0.5s ease-out;
 }
-input[type="checkbox"][custom-checkbox] + label:hover {
-  border: 1px solid #3a56c2;
+.check-box-wrapper input[type="checkbox"][custom-checkbox] + label:hover {
+  border: 2px solid #357ec2;
 }
-input[type="checkbox"][custom-checkbox] + label.checkbox-with-label {
+.check-box-wrapper input[type="checkbox"][custom-checkbox] + label.checkbox-with-label {
   position: relative;
   top: 2px;
 }
-input[type="checkbox"][custom-checkbox]:checked + label::before {
+.check-box-wrapper input[type="checkbox"][custom-checkbox]:focus + label {
+  border: 2px solid #357ec2;
+}
+.check-box-wrapper input[type="checkbox"][custom-checkbox]:checked + label::before {
   content: "\f00c";
   display: inline-block;
   position: absolute;
   right: -1px;
   bottom: -1px;
+  color: white;
+  background-color: #2ac225;
 }
-input[type="checkbox"][custom-checkbox][disabled] + label {
-  background-color: white;
+.check-box-wrapper input[type="checkbox"][custom-checkbox][disabled] + label {
   cursor: auto;
-  border: 1px solid #8d8d8d;
-  color: #8d8d8d;
+  border: 2px solid #8d8d8d;
 }
-input[type="checkbox"][custom-checkbox] + label + .custom-checkbox-label {
+.check-box-wrapper input[type="checkbox"][custom-checkbox][disabled] + label::before {
+  background-color: #8d8d8d;
+}
+.check-box-wrapper input[type="checkbox"][custom-checkbox] + label + .custom-checkbox-label {
   cursor: pointer;
   -webkit-user-select: none;
   /* Chrome all / Safari all */
@@ -46,4 +59,8 @@ input[type="checkbox"][custom-checkbox] + label + .custom-checkbox-label {
   font-family: sans-serif;
   font-size: 13px;
   margin-left: 8px;
+}
+.check-box-wrapper input[type="checkbox"][custom-checkbox][disabled] + label + .custom-checkbox-label {
+  cursor: default;
+  color: #8d8d8d;
 }
